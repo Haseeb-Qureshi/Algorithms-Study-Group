@@ -1,5 +1,5 @@
-## Week 1: Strings
-
+# Week 1: Strings
+##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/)
 ######Topics:
 * What are strings?
 * Think about them as special cases of arrays!
@@ -47,4 +47,4 @@ Read about and implement the [Boyer-Moore-Horspool text search algorithm](https:
 
  Boyer-Moore-Horspool is the most common general-use string search algorithm, and it’s extremely fast for most practical text search requirements.
 
- Python, Java, Go, JavaScript (V8) and many other string search implementations use the Boyer-Moore-Horspool for text searching. Ruby actually used to use the Rabin-Karp algorithm, and it now uses a home-spun algorithm which is an adaptation of Knuth-Morris-Pratt. That’s not important though. What is important is that Boyer-Moore-Horspool is the gold standard.
+ Python, Java, Go, JavaScript (V8) and many other string search implementations use the Boyer-Moore-Horspool for text searching. Ruby actually used to use the Rabin-Karp algorithm, and it now uses a home-spun algorithm which is an adaptation of Knuth-Morris-Pratt. But generally speaking, Boyer-Moore-Horspool is the gold standard for general-purpose text search.
