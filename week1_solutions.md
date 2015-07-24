@@ -1,6 +1,6 @@
 ## Week 1 solutions:
 1. Reverse a string (don't use `String#reverse` or `Array#reverse`). Do it by hand.
-```
+```ruby
     def reverse(str)
       length = str.length
       str.length.times do |i|
@@ -19,7 +19,7 @@
 
 2. Find the first non-repeating character in a String. (Try to do this in `O(n)` time.)
 
-```
+```ruby
 def first_nonrepeating_char(str)
     char_counts = Hash.new(0)
     str.each_char { |char| char_counts[char] += 1 }
@@ -29,8 +29,7 @@ end
 
 3. Given two strings, determine if the strings are anagrams. E.g., "bat" is an anagram of "tab," but not of "bate" or "at"
 
-
-```
+```ruby
 def anagrams?(str1, str2) # sorting -- O(nlog(n))
     str1.chars.sort.join == str2.chars.sort.join
 end
@@ -50,7 +49,7 @@ end
 4. Determine if a string is a rotation of another string. (Don't use the `Array#rotate` method.) Ex: `deabc` is a rotation of `abcde` (wrapping around by 2 to the right).
 
 
-```
+```ruby
 def rotation?(str1, str2) # (O(k^2) where k is the length of the strings)
     return false if str1.length != str2.length
 
@@ -78,7 +77,7 @@ end
 5. Find all of the permutations of a string. E.g., the permutations of "abc" are: "abc", "acb", "bac", "bca", "cab", "cba".
 
 
-```
+```ruby
 def permutations(str) # O(n!), since there are n factorial permutations
     return [str] if str.length == 1
     perms = []
@@ -96,7 +95,7 @@ end
  E.g., "abc" and "def" can be interleaved to make "adbecf". However, if you took away any letter, or changed the order to "acdfeb", it would no longer be a valid interleaving.
 
 
- ```
+ ```ruby
  def is_interleaved?(str1, str2, str3, cache = {})
      return false if cache[str1] || cache[str2]
      return false if str1.length + str2.length != str3.length
