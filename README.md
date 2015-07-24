@@ -1,5 +1,5 @@
-# Algorithms-Study-Group
-#### Study group for algorithms in Ruby
+# a/A Ruby Algorithms Study Group
+###### Shortcut URL: [http://tinyurl.com/aa-algos](http://tinyurl.com/aa-algos)
 
 
 ###### Go to the README to see the problems for this week. Solutions will be posted after the week's meetup!
