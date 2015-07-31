@@ -1,6 +1,7 @@
 # Week 3: Computational Complexity
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 ######Topics:
+* The Halting Problem
 * What is computation?
 * Turing Machines ([picture](http://cdn.makeagif.com/media/7-31-2015/PVv1XT.gif))
 * Asymptotic analysis, scalability, and Moore's Law ([Big Oh](http://everythingcomputerscience.com/images/Algorithm_Analysis731x524.jpg))
