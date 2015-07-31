@@ -1,5 +1,5 @@
 # Week 3: Computational Complexity
-##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at (App Academy)[http://appacademy.io]
+##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 ######Topics:
 * What is computation?
 * Turing Machines ([picture](http://cdn.makeagif.com/media/7-31-2015/PVv1XT.gif))
@@ -9,7 +9,7 @@
 * Satisfiability (Cook's Theorem), Reductions
 * Heuristics, parameterizations, and approximations
 
-######List of NP-hard problems:
+######List of NP-complete problems:
 * Knapsack Problem
 * 3-SAT (Boolean satisfiability)
 * Vertex Cover
