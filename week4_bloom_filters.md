@@ -2,10 +2,11 @@
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:
+* Word Processing and Windows 95
 * What's a hash function?
-* How a hash map works
-* Hash map --> bitmap --> Bloom filter
-* Word Processing, Windows 95, and database reads
+* Hash map basics
+* Hash map --> bitmap + multiple hash functions --> Bloom filter
+* Network routers and database reads
 * Time complexity
 * Probabilistic data structure?
   * P(0|one hash insertion)
