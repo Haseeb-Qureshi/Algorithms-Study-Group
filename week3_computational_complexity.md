@@ -1,5 +1,6 @@
 # Week 3: Computational Complexity
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
+
 ######Topics:
 * The Halting Problem
 * What is computation?

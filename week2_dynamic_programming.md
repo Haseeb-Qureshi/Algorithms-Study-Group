@@ -1,5 +1,6 @@
 # Week 2: Dynamic Programming with Matrices
 ##### Led by: [Joshua Penman](https://github.com/JoshuaSP/), currently on the infrastructure/stability team at [Asana](http://asana.com)
+
 ######Topics:
 * What is dynamic programming?
 * Dynamic programming vs. recursive solutions.
