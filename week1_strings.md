@@ -1,5 +1,5 @@
 # Week 1: Strings
-##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at (App Academy)[http://appacademy.io]
+##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:
 * What are strings?
