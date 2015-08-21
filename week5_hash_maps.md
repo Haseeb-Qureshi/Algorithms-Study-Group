@@ -1,5 +1,5 @@
 # Week 5: Hash Maps
-##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at (App Academy)[http://appacademy.io]
+##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:
 * Hash map vs hash set
