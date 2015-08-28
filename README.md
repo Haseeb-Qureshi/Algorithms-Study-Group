@@ -8,4 +8,4 @@
 #### [Week 3: Computational Complexity](week3_computational_complexity.md)
 #### [Week 4: Bloom Filters](week4_bloom_filters.md) | [Skeleton](lib/week4_bloom_filter/week4_bloom_filter.zip) | [Solutions](week4_solutions.rb)
 #### [Week 5: Hash Map](week5_hash_maps.md) | [Skeleton](lib/week5_hash_map/skeleton.zip) | [Solutions](lib/week5_hash_map/solution/lib)
-#### [Week 6: Bit Manipulation](week6_bit_manipulation.md) | Solutions
+#### [Week 6: Bit Manipulation](week6_bit_manipulation.md) | [Solutions](week6_solutions.md)

@@ -4,8 +4,6 @@
 ######Topics:
 * How computers store integers
 * Fixnums vs Bignums (no floating points for now)
-* How to represent negative numbers?
-  * Two's complement
 * The basic bitwise operators:
   * AND(`&`)
   * OR(`|`)
@@ -13,13 +11,15 @@
   * NOT(`~`)
   * LSHIFT(`<<`)
   * RSHIFT(`>>`)
+* How to represent negative numbers?
+  * Two's complement
 
 Ruby methods to know:
 * `Fixnum#to_s(2)` => Converts into a binary string
 * `0b1000` => Binary literal. This will create the number 8 (`1000` in binary)
 
 ###### Binary Warmup:
-Using pencil and paper, calculate the below values:
+Using pencil and paper (no terminal), calculate the below values and convert them into decimal:
 
 1. `0110 + 0110`
 2. `1101 >> 0010`
@@ -30,7 +30,7 @@ Using pencil and paper, calculate the below values:
 
 ### PROBLEM SET:
 
-1. Write your own version of binary XOR. Monkey-patch String class, and XOR your string with another string. (Assume the other string is also in binary.)
+1. Write your own version of binary XOR. Monkey-patch String class, and XOR your binary string with another binary string. (No need for type/validity checking.)
 
   ```ruby
   class String
@@ -39,7 +39,7 @@ Using pencil and paper, calculate the below values:
   end
   ```
 
-2. Write your own version of binary LSHIFT (<<), which takes in a Fixnum. Pad with 0s.
+2. Write your own version of binary LSHIFT (<<) for a 4-bit binary string. Your method should take in a `Fixnum`. Pad with 0s.
 
   ```ruby
   class String
