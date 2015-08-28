@@ -60,40 +60,11 @@
 
   ```ruby
   def twos_complement(binary_str)
-    str = binary_str.reverse.chars.map { |char| char == "0" ? "1" : "0" }.join
-    carry = 0
-    new_str = ""
-    str.each_char.with_index do |char, i|
-        if i == 0
-            if char == "0"
-                new_str << "1"
-            else
-                new_str << "0"
-                carry = 1
-            end
-            next
-        end
+    complement = ""
+    mirror = ~binary_str.to_i(2) + 1
+    (binary_str.length - 1).downto(0) { |n| complement << mirror[n].to_s }
 
-        if char == "0"
-            if carry > 0
-                carry -= 1
-                new_str << "1"
-            else
-                new_str << "0"
-            end
-        end
-
-        if char == "1"
-            if carry > 0
-                carry -= 1
-                new_str << "0"
-            else
-                new_str << "1"
-            end
-        end
-    end
-
-    new_str.reverse
+    complement
   end
   ```
 
