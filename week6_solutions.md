@@ -74,8 +74,10 @@
       num
     end
 
-    # hideous one-liner
+    # hideous one-liner.
     def find_missing_hideous(arr1, arr2)
       [arr1, arr2].inject(0) { |num, arr| arr.each { |el| num ^= el }; num }
     end
+
+    # ugh. I feel dirty.
   ```
