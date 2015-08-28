@@ -3,7 +3,12 @@
 
 ######Topics:
 * Hash map vs hash set
+* Abstract data type vs. data structure
+* MaxIntSet
+* ResizingIntSet
 * How does hashing work? (Brief review)
+* Linked List
+* Putting it all together
 * Now have at it!
 
 ### PROBLEM SET:
