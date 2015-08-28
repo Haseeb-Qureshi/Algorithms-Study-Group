@@ -29,7 +29,6 @@
     end
   end
   ```
-
 3. Determine whether a number is a power of 2 without using any looping constructs. (Hint: think in terms of its binary representation and the bit operators you know.)
 
   ```ruby
@@ -37,7 +36,6 @@
     num > 0 && num & (num - 1) == 0
   end
   ```
-
 4. Swap two integers in place, without using a third temporary variable. (Ruby's parallel assignment: `x, y = y, x` doesn't count.)
 
   ```ruby
@@ -55,7 +53,6 @@
     puts "#{x}, #{y}"
   end
   ```
-
 5. Implement two's complement for an 8-bit system. Given an 8-bit integer in binary (represented as a string), calculate its two's complement and output the appropriate binary number as a string (which would be the representation of that number's inverse). I.e., `twos_complement("00000011")` should output `"11111101"`. Feel free to use Ruby's built-in methods to accomplish this.
 
   ```ruby
@@ -67,22 +64,18 @@
     complement
   end
   ```
-
 6. You are given two arrays: an array of positive integers, and a shuffled version of the first array, but with one element deleted. Figure out which element was deleted from the first array. (See if you can do this in `O(n)` time. Then see if you can do this in `O(1)` space. Your understanding of bit operations will help you here!)
 
-```ruby
-def find_duplicate(arr1, arr2)
-  num = 0
-  [arr1, arr2].each do |arr|
-    arr.each do |el|
-      num = num ^ el
+  ```ruby
+    def find_missing(arr1, arr2)
+      num = 0
+      arr1.each {|el| num = num ^ el }
+      arr2.each {|el2| num = num ^ el2 }
+      num
     end
-  end
-  num
-end
 
-# hideous one-liner
-def find_missing(arr1, arr2)
-  [arr1, arr2].inject(0) { |num, arr| arr.each { |el| num = num ^ el }; num }
-end
-```
+    # hideous one-liner
+    def find_missing_hideous(arr1, arr2)
+      [arr1, arr2].inject(0) { |num, arr| arr.each { |el| num ^= el }; num }
+    end
+  ```
