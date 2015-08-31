@@ -9,14 +9,15 @@
 #### Problem Set Solutions
 
 1. Write your own version of binary XOR. Monkey-patch String class, and XOR your 4-bit binary string with another 4-bit binary string. (No need for type/validity checking.)
-```ruby
-    class String
-      def XOR(other_str)
-        chars.map.with_index do |char, i|
-        char == other_str[i] ? "0" : "1"
-      end.join
-    end
-```
+  ```ruby
+  class String
+    def XOR(other_str)
+      chars.map.with_index do |char, i|
+      char == other_str[i] ? "0" : "1"
+    end.join
+  end
+  ```
+
 2. Write your own version of binary LSHIFT (<<) for a 4-bit binary string. Your method should take in a `Fixnum`. Pad with 0s.
 
   ```ruby
