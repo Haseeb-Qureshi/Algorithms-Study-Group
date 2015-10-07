@@ -13,8 +13,9 @@
   class String
     def XOR(other_str)
       chars.map.with_index do |char, i|
-      char == other_str[i] ? "0" : "1"
-    end.join
+        char == other_str[i] ? "0" : "1"
+      end.join
+    end
   end
   ```
 
