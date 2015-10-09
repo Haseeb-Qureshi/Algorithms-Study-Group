@@ -34,8 +34,10 @@ At the end, reverse the sequence, and viola!
 
 Remember, you want to take the *minimum* of the three possible operation costs. The code should look fairly similar to your LCS, but not entirely the same.
 
+Again, the dimensions should be `str1.length + 1, str2.length + 1`. But in this case, your first row should be initialized with `(0...str1.length)`, and your first column should be `(0...str2.length)`. Try to reason why this is is the case.
 
+Then same this as before, `1.upto(str1.length)`, `1.upto(str2.length)`. But the rules are a little bit different from how you add up the costs. Figure this out! Remember, you should always be able to use the 3 adjacent cells to calculate the edit distance.
 
 ### BONUS:
 
-Implement an auto-correct function. Taking in a string, return the closest match within a dictionary. I've provided you a dictionary.
+Implement an auto-correct function. Taking in a string, return the closest match within a dictionary. I've provided you the dictionary.
