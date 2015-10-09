@@ -80,13 +80,3 @@ def autocorrect(str)
   File.foreach("dictionary.txt") { |line| dict << line.chomp if line[0] == str[0] }
   dict.min_by { |word| edit_distance(str, word) }
 end
-
-def diff(str1, str2)
-  output = ""
-
-  str1.each_char.with_index do |char, i|
-    if char == str1[i]
-      output << char
-    end
-  end
-end
