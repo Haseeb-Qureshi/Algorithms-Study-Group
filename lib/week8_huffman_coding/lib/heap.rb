@@ -10,6 +10,9 @@ class Heap
     @store.size
   end
 
+  alias_method :count, :size
+  alias_method :length, :size
+
   def min
     @store[0]
   end
@@ -19,6 +22,9 @@ class Heap
     heapify_up!
     val
   end
+
+  alias_method :<<, :insert
+  alias_method :push, :insert
 
   def pop_min
     min = @store.first
@@ -30,6 +36,10 @@ class Heap
     heapify_down!
     min
   end
+
+  alias_method :pop, :pop_min
+
+  private
 
   def heapify_up!
     current_idx = @store.length - 1

@@ -18,7 +18,7 @@ class HuffmanCode < String
     freqs = Hash.new(0)
     chars.each { |char| freqs[char] += 1 }
     @letter_frequencies = freqs.map { |char, count| HuffmanNode.new(char, count) }
-    @codes = chars.map { |char| [char, ""] }.to_h
+    @codes = Hash.new { |h, k| h[k] = "" }
   end
 
   def construct_code
@@ -26,7 +26,7 @@ class HuffmanCode < String
     until nodes.size == 1
       min1, min2 = nodes.pop_min, nodes.pop_min
       super_node = min1.combine(min2)
-      nodes.insert(super_node)
+      nodes << super_node
       min1.letters.each { |letter| @codes[letter].prepend("0") }
       min2.letters.each { |letter| @codes[letter].prepend("1") }
     end
