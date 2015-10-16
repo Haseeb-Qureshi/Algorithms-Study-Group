@@ -10,4 +10,4 @@
 #### [Week 5: Building a Hash Map](week5_hash_maps.md) | [Skeleton](lib/week5_hash_map/skeleton.zip) | [Solutions](lib/week5_hash_map/solution/lib)
 #### [Week 6: Bit Manipulation](week6_bit_manipulation.md) | [Solutions](week6_solutions.md)
 #### [Week 7: Edit Distance Algorithms](week7_edit_distance.md) | [Skeleton](lib/week7_edit_distance/skeleton.zip) | [Solutions](week7_solutions.md)
-#### [Week 8: Compression Algorithms: Huffman Coding](week8_huffman_coding.md) | [Skeleton](lib/week8_huffman_coding/skeleton.zip) | Solutions
+#### [Week 8: Compression Algorithms: Huffman Coding](week8_huffman_coding.md) | [Skeleton](lib/week8_huffman_coding/skeleton.zip) | [Solutions](week8_solutions.rb)
