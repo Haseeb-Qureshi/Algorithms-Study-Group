@@ -3,8 +3,9 @@
 
 ###### Topics:
 * Why compress stuff? How does one compress anything?
+* Run-length encoding
 * Entropy: Claude Shannon is basically the man
-* Why fixed-length encoding sucks
+* Fixed-length encoding (and why it kinda sucks)
 * Variable-length encoding
 * The story of Claude Shannon & David Huffman
 * Huffman Coding through binary trees
