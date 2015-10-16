@@ -28,6 +28,11 @@
 
   Now transform your string, character-by-character, into its Huffman-coded version.
 
+  Methods that may be helpful:
+  `String#clear`: replaces the string's contents with `""`
+  `String#gsub!(&blk)`: replaces the string's contents that match a Regex (or string) with the value provided in the block
+  `Hash#invert`: flips the keys and values in a hash
+
 3. Now to `decode!` This turns the message from the encoded version back into the original message. This shouldn't be too hard; just make sure you saved the Huffman Code you generated before in an instance variable.
 
   If your code is prefix-free (in other words, if you did it correctly), you should be able to unambiguously reconstruct the original string.
