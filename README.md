@@ -11,4 +11,4 @@
 #### [Week 6: Bit Manipulation](week6_bit_manipulation.md) | [Solutions](week6_solutions.md)
 #### [Week 7: Edit Distance Algorithms](week7_edit_distance.md) | [Skeleton](lib/week7_edit_distance/skeleton.zip) | [Solutions](week7_solutions.md)
 #### [Week 8: Compression Algorithms: Huffman Coding](week8_huffman_coding.md) | [Skeleton](lib/week8_huffman_coding/skeleton.zip) | [Solutions](week8_solutions.rb)
-#### [Week 9: Compression Algorithms: The Lempel-Ziv Family](week9_lempel_ziv.md) | [Skeleton](lib/week9_lempel_ziv/skeleton.zip) | [Solutions](week9_solutions.md)
+#### [Week 9: Compression Algorithms: The Lempel-Ziv Family](week9_lempel_ziv.md) | [Skeleton](lib/week9_lempel_ziv/skeleton.zip) | [Solutions](week9_solutions.rb)
