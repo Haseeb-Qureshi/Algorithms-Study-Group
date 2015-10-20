@@ -3,6 +3,7 @@ require_relative 'heap'
 class HuffmanCode < String
   attr_reader :codes
   def encode!
+    raise RunTimeError if @encoded
     preprocess
     construct_code
     self
