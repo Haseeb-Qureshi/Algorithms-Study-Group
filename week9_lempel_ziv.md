@@ -24,11 +24,9 @@ Like with Huffman Codes, we'll be creating String hybrids to perform our dirty w
 1. Start by writing your `encode!` method. Below is a general explanation of the algorithm again,
   just to give you a guidepost.
 
-  ```
-    Start with a dictionary initialized to the ASCII alphabet. Walk through the characters one by one and build up a temporary string. Each time your temporary string already appears in your dictionary, add another character to it. But if it doesn't appear in your dictionary, then add a new entry to your dictionary for that new, never-before-seen substring, shovel the encoding of the part of the substring you HAVE seen into your overall encoded string, and start building your temporary string from scratch again.
+    * Start with a dictionary initialized to the ASCII alphabet. Walk through the characters one by one and build up a temporary string. Each time your temporary string already appears in your dictionary, add another character to it. But if it doesn't appear in your dictionary, then add a new entry to your dictionary for that new, never-before-seen substring, shovel the encoding of the part of the substring you HAVE seen into your overall encoded string, and start building your temporary string from scratch again.
 
-  Keep going until you reach the end of the string.
-  ```
+    * Keep going until you reach the end of the string.
 
   Watch out for dangling substrings at the end.
 
