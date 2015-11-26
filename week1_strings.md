@@ -5,11 +5,13 @@
 * What are strings?
 * Think about them as special cases of arrays!
 * How do they work in C? -- Null terminated, linear length lookup
+* P-Strings (Pascal) and RStrings (Ruby)
 * Mutability vs immutability
 * String concatenation
+* String Buffers for faster concatenation (Ruby's String#join)
 * ASCII characters vs UTF-8 (Variable-length encoding)
 * Series of bytes vs series of characters
-* String Buffers for faster concatenation (Ruby's String#join)
+* Copy-on-write optimization
 
 ### PROBLEM SET:
 
