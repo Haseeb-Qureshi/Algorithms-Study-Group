@@ -17,6 +17,6 @@
 * Vertex Cover
 * Traveling Salesman
 * Clique Problem
-* Longest Common Subsequence
+* Longest Common Subsequence (of arbitrarily many input sequences)
 * Super Mario Bros
 * Tetris
