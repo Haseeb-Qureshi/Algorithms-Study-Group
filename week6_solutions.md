@@ -71,15 +71,14 @@
   ```ruby
     def find_missing(arr1, arr2)
       num = 0
-      arr1.each {|el| num = num ^ el }
-      arr2.each {|el2| num = num ^ el2 }
+      arr1.each {|el| num ^= el }
+      arr2.each {|el2| num ^= el2 }
       num
     end
 
-    # hideous one-liner.
-    def find_missing_hideous(arr1, arr2)
-      [arr1, arr2].inject(0) { |num, arr| arr.each { |el| num ^= el }; num }
+    def find_missing(arr1, arr2) # one-liner!
+      [arr1, arr2].inject(0) { |num, arr| arr.inject(num, :^) } # <== hidden smiley face
     end
 
-    # ugh. I feel dirty.
+    # God, I love Ruby.
   ```
