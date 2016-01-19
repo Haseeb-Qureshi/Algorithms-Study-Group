@@ -13,5 +13,5 @@
 #### [Week 7: Bit Manipulation](week7_bit_manipulation.md) | [Solutions](week7_solutions.md)
 #### [Week 8: Compression Algorithms: The Lempel-Ziv Family](week8_lempel_ziv.md) | [Skeleton](lib/week8_lempel_ziv/skeleton.zip) | [Solutions](week8_solutions.rb)
 
-<br><br>
+<br>
 ##### [Guest lectures](guest_lectures/README.md)

@@ -15,7 +15,7 @@
 
 ### PROBLEM SET:
 
-##### Download [this skeleton](lib/week9_lempel_ziv/skeleton.zip), bundle install, and start passing those specs!
+##### Download [this skeleton](lib/week8_lempel_ziv/skeleton.zip), bundle install, and start passing those specs!
 
 ## README
 
