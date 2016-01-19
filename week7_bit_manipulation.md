@@ -1,4 +1,4 @@
-# Week 6: Bit Manipulation
+# Week 7: Bit Manipulation
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:

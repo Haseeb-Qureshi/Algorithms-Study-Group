@@ -1,4 +1,4 @@
-# Week 7: Edit Distance Algorithms
+# Week 5: Edit Distance Algorithms
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ###### Topics:
@@ -12,7 +12,7 @@
 
 ### PROBLEM SET:
 
-##### Download [this skeleton](lib/week7_edit_distance/skeleton.zip), bundle install, and start passing those specs!
+##### Download [this skeleton](lib/week5_edit_distance/skeleton.zip), bundle install, and start passing those specs!
 
 1. Start by writing `lcs_table(str1, str2)` which constructs your Dynamic Programming table. You will use this to both find the length of the LCS, as well as to reconstruct it.
 

@@ -1,4 +1,4 @@
-# Week 4: Bloom Filters
+# Week 1: Bloom Filters
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:
@@ -32,7 +32,7 @@
 * Review of the code!
 
 ### PROBLEM SET
-###### Download this [Bloom filter skeleton](lib/week4_bloom_filter/week4_bloom_filter.zip), bundle install, and start passing those specs!
+###### Download this [Bloom filter skeleton](lib/week1_bloom_filter/skeleton.zip), bundle install, and start passing those specs!
 
 ##### BONUS:
 Adapt your Bloom filter to become a [Counting Filter](https://en.wikipedia.org/wiki/Bloom_filter#Counting_filters). This will allow you to perform deletions! See if you can write a `delete` method for your counting filter.

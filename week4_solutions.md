@@ -1,4 +1,4 @@
-## Week 1 solutions:
+## Week 4 solutions:
 1. Reverse a string (don't use `String#reverse` or `Array#reverse`). Do it by hand.
 
   ```ruby

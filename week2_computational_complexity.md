@@ -1,4 +1,4 @@
-# Week 3: Computational Complexity
+# Week 2: Computational Complexity
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ######Topics:

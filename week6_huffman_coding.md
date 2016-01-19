@@ -1,4 +1,4 @@
-# Week 8: Huffman Coding
+# Week 6: Huffman Coding
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ###### Topics:
@@ -15,7 +15,7 @@
 
 ### PROBLEM SET:
 
-##### Download [this skeleton](lib/week8_huffman_coding/skeleton.zip), bundle install, and start passing those specs!
+##### Download [this skeleton](lib/week6_huffman_coding/skeleton.zip), bundle install, and start passing those specs!
 
 ## README
 

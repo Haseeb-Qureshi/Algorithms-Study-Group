@@ -1,102 +1,88 @@
-require_relative 'heap'
+require_relative "wherever_huffman_codes_are"
 
-class HuffmanCode < String
-  attr_reader :codes
+class LZString < String
+  def self.ascii_dictionary
+    Array.new(128) { |i| [i.chr, i.chr] }.to_h
+  end
+
+  def initialize(*args)
+    @dictionary = LZString.ascii_dictionary
+    super(*args)
+  end
+
   def encode!
-    raise RuntimeError if @encoded
-    preprocess
-    construct_code
+    transform_encoding!(encoded_string)
     self
   end
 
   def decode!
-    raise RuntimeError unless @encoded
-    reconstruct_message
+    transform_encoding!(decoded_string)
     self
   end
 
-  def preprocess
-    freqs = Hash.new(0)
-    chars.each { |char| freqs[char] += 1 }
-    @letter_frequencies = freqs.map { |char, count| HuffmanNode.new(char, count) }
-    @codes = Hash.new { |h, k| h[k] = "" }
-  end
+  private
 
-  def construct_code
-    nodes = Heap.new(@letter_frequencies)
-    until nodes.size == 1
-      min1, min2 = nodes.pop_min, nodes.pop_min
-      super_node = min1.combine(min2)
-      nodes << super_node
-      min1.letters.each { |letter| @codes[letter].prepend("0") }
-      min2.letters.each { |letter| @codes[letter].prepend("1") }
-    end
-    generated_code = gsub(/./) { |char| @codes[char] }
-    transform_encoding!(generated_code)
-  end
-
-  def reconstruct_message
-    decoded_string = ""
-    current_string = ""
-    inverted_codes = @codes.invert
+  def encoded_string
+    encoded_string = ""
+    current_chunk = ""
     each_char do |char|
-      current_string << char
-      if inverted_codes.has_key?(current_string)
-        decoded_string << inverted_codes[current_string]
-        current_string.clear
+      if @dictionary[current_chunk + char]
+        current_chunk << char
+      else
+        @dictionary[current_chunk + char] = @dictionary.length
+        encoded_string << @dictionary[current_chunk].chr
+        current_chunk = char
       end
     end
-    transform_encoding!(decoded_string)
+    encoded_string << @dictionary[current_chunk].chr unless current_chunk.empty?
+    encoded_string
   end
 
-  def transform_encoding!(new_contents)
+  def decoded_string
+    decoded_string = self[0]
+    current_chunk = self[0]
+    each_char.with_index do |char, i|
+      next if i == 0
+      if @dictionary[char]
+        next_piece = @dictionary[char]
+      elsif char.ord == @dictionary.size
+        next_piece = current_chunk + current_chunk[0]
+      else
+        raise "Fatal decoding error!"
+      end
+
+      decoded_string << next_piece
+      @dictionary[@dictionary.size.chr] = current_chunk + next_piece[0]
+      current_chunk = next_piece
+    end
+    decoded_string
+  end
+
+  def transform_encoding!(str)
+    @dictionary = LZString.ascii_dictionary
     self.clear
-    self.concat(new_contents)
+    self.concat(str)
     @encoded = !@encoded
-  end
-
-  def fixed_compression_factor
-    fixed_encoding_length = Math.log2(chars.uniq.count).ceil * length
-    compression_factor = calculate_compression_factor(fixed_encoding_length)
-    "#{compression_factor}%"
-  end
-
-  def ascii_compression_factor
-    compression_factor = calculate_compression_factor(7 * length)
-    "#{compression_factor}%"
-  end
-
-  def calculate_compression_factor(other_encoding_length)
-    initial_length = length
-    encode!
-    huffman_encoded_length = length
-    decode!
-    huffman_encoded_length.fdiv(other_encoding_length).round(2) * 100
-  end
-
-  def output_compression_benchmarks
-    puts "Percentage savings over fixed-length encoding: #{fixed_compression_factor}"
-    puts "Percentage savings over ASCII encoding: #{ascii_compression_factor}"
   end
 end
 
-class HuffmanNode
-  include Comparable
-  attr_reader :letters, :count
-  def initialize(letters, count)
-    @letters = Array(letters)
-    @count = count
+# Bonus!
+
+class SuperCode < String
+  def encode!
+    raise RuntimeError if @encoded
+    @encoded = true
+    lzw_code = LZString.new(self).encode!
+    @code = HuffmanCode.new(lzw_code).encode!
+    clear
+    concat(@code)
   end
 
-  def <=>(other)
-    @count <=> other.count
-  end
-
-  def combine(other)
-    HuffmanNode.new(@letters + other.letters, @count + other.count)
-  end
-
-  def inspect
-    "#{@letters} => #{@count}"
+  def decode!
+    raise RuntimeError unless @encoded
+    @code.decode!
+    decoded_code = LZString.new(@code).decode!
+    clear
+    concat(decoded_code)
   end
 end

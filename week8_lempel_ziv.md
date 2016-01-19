@@ -1,4 +1,4 @@
-# Week 9: Compression: The Lempel-Ziv Family
+# Week 8: Compression: The Lempel-Ziv Family
 ##### Led by: [Haseeb Qureshi](https://github.com/Haseeb-Qureshi/), instructor at [App Academy](http://appacademy.io)
 
 ###### Topics:

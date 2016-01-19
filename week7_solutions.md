@@ -1,92 +1,84 @@
-```ruby
-def lcs_length(str1, str2)
-  lcs_table(str1, str2).last.last
-end
-```
+###### Warmup Solutions
 
-```ruby
-def lcs_table(str1, str2)
-  str1, str2 = str1.downcase, str2.downcase
-  dp = Array.new(str1.length + 1) { Array.new(str2.length + 1) { 0 } }
+1. `0110 + 0110` = `1100` = **12**
+2. `1101 >> 0010` = `0011` = **3**
+3. `1101 ^ 0101` = `1000` = **8**
+4. `1101 ^ (~1101)` = `1111` = **15**
+5. `1011 & (~0 << 2)` = `1000` = **8**
 
-  1.upto(str1.length) do |i|
-    1.upto(str2.length) do |j|
-      if str1[i - 1] == str2[j - 1]
-        dp[i][j] = dp[i - 1][j - 1] + 1
-      else
-        dp[i][j] = [dp[i][j - 1], dp[i - 1][j]].max
-      end
+#### Problem Set Solutions
+
+1. Write your own version of binary XOR. Monkey-patch String class, and XOR your 4-bit binary string with another 4-bit binary string. (No need for type/validity checking.)
+  ```ruby
+  class String
+    def XOR(other_str)
+      chars.map.with_index do |char, i|
+        char == other_str[i] ? "0" : "1"
+      end.join
     end
   end
+  ```
 
-  dp
-end
-```
+2. Write your own version of binary LSHIFT (<<) for a 4-bit binary string. Your method should take in a `Fixnum`. Pad with 0s.
 
-```ruby
-def lcs(str1, str2)
-  table = lcs_table(str1, str2)
-  i, j = str1.length - 1, str2.length - 1
-  sequence = ""
-
-  while i >= 0 && j >= 0
-    if str1[i] == str2[j]
-      sequence << str1[i]
-      i -= 1
-      j -= 1
-    else
-      current = table[i + 1][j + 1]
-      left = table[i + 1][j]
-      above = table[i][j + 1]
-
-      if above && above == current
-        i -= 1
-      else
-        j -= 1
-      end
+  ```ruby
+  class String
+    def LSHIFT(num)
+      return "0000" if num >= 4
+      str = self.dup
+      num.times { str << "0" }
+      str[-4..-1]
     end
   end
+  ```
+3. Determine whether a number is a power of 2 without using any looping constructs. (Hint: think in terms of its binary representation and the bit operators you know.)
 
-  sequence.reverse!
-end
-```
-
-```ruby
-EDIT_COSTS = {
-  replace: 1,
-  insert: 1,
-  delete: 1,
-}
-
-def edit_distance(str1, str2)
-  str1, str2 = str1.downcase, str2.downcase
-  dp = Array.new(str1.length + 1) { Array.new(str2.length + 1) { 0 } }
-  costs = EDIT_COSTS
-
-  dp[0].map!.with_index { |_, i| i }
-  dp.each_with_index { |arr, j| arr[0] = j }
-
-  1.upto(str1.length) do |i|
-    1.upto(str2.length) do |j|
-      if str1[i - 1] == str2[j - 1]
-        dp[i][j] = dp[i - 1][j - 1]
-      else
-        dp[i][j] = [
-          costs[:insert] + dp[i][j - 1],
-          costs[:delete] + dp[i - 1][j],
-          costs[:replace] + dp[i - 1][j - 1]
-        ].min
-      end
-    end
+  ```ruby
+  def power_of_two?(num)
+    num > 0 && num & (num - 1) == 0
   end
-  dp.last.last
-end
-```
+  ```
+4. Swap two integers in place, without using a third temporary variable. (Ruby's parallel assignment: `x, y = y, x` doesn't count.)
 
-```ruby
-def autocorrect(str)
-  dict = []
-  File.foreach("dictionary.txt") { |line| dict << line.chomp if line[0] == str[0] }
-  dict.min_by { |word| edit_distance(str, word) }
-end
-```
+  ```ruby
+  def swap1(x, y)
+    x = y - x
+    y = y - x
+    x = x + y
+    puts "#{x}, #{y}"
+  end
+
+  def swap2(x, y)
+    x = x ^ y
+    y = x ^ y
+    x = x ^ y
+    puts "#{x}, #{y}"
+  end
+  ```
+5. Implement two's complement for an 8-bit system. Given an 8-bit integer in binary (represented as a string), calculate its two's complement and output the appropriate binary number as a string (which would be the representation of that number's inverse). I.e., `twos_complement("00000011")` should output `"11111101"`. Feel free to use Ruby's built-in methods to accomplish this.
+
+  ```ruby
+  def twos_complement(binary_str)
+    complement = ""
+    mirror = ~binary_str.to_i(2) + 1
+    (binary_str.length - 1).downto(0) { |n| complement << mirror[n].to_s }
+
+    complement
+  end
+  ```
+6. You are given two arrays: an array of positive integers, and a shuffled version of the first array, but with one element deleted. Figure out which element was deleted from the first array. (See if you can do this in `O(n)` time. Then see if you can do this in `O(1)` space. Your understanding of bit operations will help you here!)
+
+  ```ruby
+    def find_missing(arr1, arr2)
+      num = 0
+      arr1.each {|el| num ^= el }
+      arr2.each {|el2| num ^= el2 }
+      num
+    end
+
+    def find_missing(arr1, arr2) # one-liner!
+      [arr1, arr2].inject(0) { |num, arr| arr.inject(num, :^) } # <== hidden smiley face
+    end
+
+    # God, I love Ruby.
+  ```
