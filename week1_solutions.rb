@@ -68,7 +68,7 @@ class BloomFilter
   end
 
   def merge!(other_filter)
-    if !other_filter.is_a?(BloomFilter) ||other_filter.num_bits != @num_bits ||
+    if !other_filter.is_a?(BloomFilter) || other_filter.num_bits != @num_bits ||
         other_filter.hash_num != @hash_num
       raise ArgumentError
     end
@@ -86,9 +86,7 @@ class BloomFilter
   end
 
   def generate_hash_variations
-    [].tap do |variations|
-      @hash_num.times { |i| variations << hash(i) }
-    end
+    [].tap { |variations| @hash_num.times { |i| variations << hash(i) } }
   end
 
   class Scalable
@@ -116,7 +114,7 @@ class BloomFilter
     end
 
     def merge!(other_filter)
-      raise ArgumentError unless other_filter.is_a? BloomFilter::Scalable
+      raise ArgumentError unless other_filter.is_a?(BloomFilter::Scalable)
       other_filter.bloom_filters.each { |bf| @bloom_filters.unshift(bf) }
     end
 
@@ -138,14 +136,13 @@ class BloomFilter
     bf = type.new(test_size)
     (0...test_size).each { |n| bf.insert(n) }
     false_positives = (test_size...test_size * 2).inject(0) do |count, n|
-      count += 1 if bf.include?(n)
-      count
+      bf.include?(n) ? count + 1 : count
     end
     rate = false_positives.fdiv(test_size)
 
     if print_to_screen
       puts "Your Bloom Filter had a false positive rate of #{rate * 100}%.\n"\
-           "Its actual rate should have been #{bf.failure_rate * 100}%."
+           "Its ideal rate should have been #{bf.failure_rate * 100}%."
     end
     rate
   end
