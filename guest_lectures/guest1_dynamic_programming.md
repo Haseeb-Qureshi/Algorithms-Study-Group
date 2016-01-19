@@ -1,4 +1,4 @@
-# Week 2: Dynamic Programming with Matrices
+# Guest Lecture 1: Dynamic Programming with Matrices
 ##### Led by: [Joshua Penman](https://github.com/JoshuaSP/), currently on the infrastructure/stability team at [Asana](http://asana.com)
 
 ######Topics:

@@ -3,6 +3,8 @@
 
 
 ###### Go to the README to see the problems for this week. Solutions will be posted after the week's meetup!
+
+##### [Guest lectures](guest_lectures/README.md)
 #### [Week 1: Strings, StringBuffers, and Unicode](week1_strings.md) | [Solutions](week1_solutions.md)
 #### [Week 2: Dynamic Programming with Matrices](week2_dynamic_programming.md) | [Solutions](week2_solutions.md)
 #### [Week 3: Computational Complexity Theory](week3_computational_complexity.md)
